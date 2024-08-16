@@ -1,0 +1,114 @@
+ID = "st-afa.199_federation"
+Name = "ST-AFA - Faction: Federation"
+Version = 0.2.3
+Author = "ST-AFA Mod-Team"
+CompatibleGameVersions = ["0.23.0"]
+ModifiesMultiplayer = true
+Logo = logo.png
+Description = "Adds a Starfleet faction to the game \n\n"\
+              "<red>WARNING: This mod is a WIP and a development mod. Some things might be unbalanced or broken!</red> \n\n"\
+			  "Requires STAR TREK - A FINAL ASSAULT MODS"
+StringsFolder = "strings"
+
+
+Actions
+[
+	// FACTIONS
+	// Add Starfleet
+	
+	{
+		Action = AddMany
+		AddTo = "<factions/factions.rules>/Factions"
+        ManyToAdd = &<factions/factions.rules>/Factions
+	}
+
+	//Generate the Federation in career mode
+	{
+		Action = AddMany
+		AddTo = "<galaxy_map/map_generators/base_galaxy.rules>/Factions/Factions"
+        ManyToAdd = &<galaxy_map/map_generators/base_galaxy.rules>/Factions/Factions
+	}
+
+	//Generate the Federation tiers in career mode
+	{
+		Action = AddMany
+		AddTo = "<galaxy_map/map_generators/base_galaxy.rules>/FactionTiers/Factions"
+        ManyToAdd = &<galaxy_map/map_generators/base_galaxy.rules>/FactionTiers/Factions
+	}
+	
+	// Add faction to StartingNodePicker -> Federation space should not be near the starting sector, as it is a mid game faction
+	// {
+		// Action = Replace
+		// Replace = "<galaxy_map/map_generators/base_galaxy.rules>/StartingNodePicker/CandidatesClosestToFactions"
+		// With = [1, [stafa.federation, monolith, cabal]]
+	// }
+	// Allow spawn in federation space  -> DO NOT USE - federation space is way too hard to start in!
+	// {
+		// Action = Replace
+		// Replace = "<galaxy_map/map_generators/base_galaxy.rules>/StartingNodePicker/AllowedFactions"
+		// With = [fringe, stafa.federation]
+	// }
+	// Add faction to StartingNodePicker
+	{
+		Action = Replace
+		Replace = "<galaxy_map/map_generators/base_galaxy.rules>/StartingNodePicker/CandidatesFarthestFromFactions"
+		With = [5, [stafa.federation, imperium]]
+	}
+	
+	// Add Starfleet and Federation codex lore
+	{
+		Action = AddMany
+		AddTo = "<codex/lore/lore.rules>/CodexPages"
+        ManyToAdd = &<codex/lore.rules>/CodexPages
+	}
+	//Generate Mission related to Starfleet
+	// {
+		// Action = AddMany
+		// AddTo = "<modes/career/sysgen_sim_global_missions.rules>/SubSpawners"
+        // ManyToAdd = &<career/sysgen_sim_global_missions.rules>/SubSpawners
+	// }
+	
+	//Starfleet Faction Ship
+	{
+		Action = AddMany
+		AddTo = "<builtin_ships/builtins.rules>/Ships"
+        ManyToAdd = &<buildin_ships/buildins.rules>/Ships
+	}
+	
+	//Create FTL Doodads
+	// {
+		// Action = AddMany
+		// AddTo = "<doodads/doodads.rules>/Doodads"
+        // ManyToAdd = &<doodads/doodads.rules>/Doodads
+	// }
+
+	//Starfleet Trade Ship
+	{
+		Action = AddBase
+		AddBaseTo = "<modes/career/career.rules>/TradeRoutes/TradeShips"
+		BaseToAdd = 	{
+					 	Federation_1  : <./Data/modes/career/career.rules>/BaseTradeShip  {ShipID="Transport Drone";     Faction=stafa.federation;   TierRange=[1, 3];   StasisSpeed=40; StasisTradeTime=35;}
+					 	Federation_2  : <./Data/modes/career/career.rules>/BaseTradeShip  {ShipID="Small Transport";     Faction=stafa.federation;   TierRange=[1, 5];   StasisSpeed=55; StasisTradeTime=48;}
+						Federation_3  : <./Data/modes/career/career.rules>/BaseTradeShip  {ShipID="Medium Transport";     Faction=stafa.federation;   TierRange=[1, 7];   StasisSpeed=60; StasisTradeTime=55;}
+						// Federation_4  : <./Data/modes/career/career.rules>/BaseTradeShip  {ShipID="Big Transport";     Faction=stafa.federation;   TierRange=[1, 10];   StasisSpeed=65; StasisTradeTime=60;}
+						Federation_5  : <./Data/modes/career/career.rules>/BaseTradeShip  {ShipID="Large Transport";     Faction=stafa.federation;   TierRange=[1, 18];   StasisSpeed=70; StasisTradeTime=65;}
+						// Federation_6  : <./Data/modes/career/career.rules>/BaseTradeShip  {ShipID="Huge Transport";     Faction=stafa.federation;   TierRange=[10, 18];   StasisSpeed=75; StasisTradeTime=70;}
+					}
+	}
+
+	//Starfleet conversion main screen ship
+	{
+		Action = Replace
+		Replace = "<gui/menus.rules>/LogoShip"
+		With = "logo.ship.png"
+	}
+	
+	//Add Starter Ships
+	{
+		
+		Action = AddMany
+		AddTo = "<modes/career/career.rules>/StarterShips"
+        ManyToAdd = &<buildin_ships/fed/Starter/Starter.rules>/StarterShips
+		
+	}
+]

@@ -1,0 +1,16 @@
+Faction = stafa.federation
+Tags = [defense]
+
+Ships
+[
+	// Platforms
+	:~{ File="Small Phaser Platform.ship.png";     		Tier=2;  Difficulty=1; }
+	:~{ File="Small Pointdefense Platform.ship.png"; 	Tier=1;  Difficulty=1; }
+	:~{ File="Small Torpedo Platform.ship.png";       	Tier=3;  Difficulty=1; }
+	:~{ File="Small Impulsephaser Platform.ship.png";   Tier=2;  Difficulty=1; }
+	:~{ File="Medium Torpedo Platform.ship.png";		Tier=6;  Difficulty=2; }
+	:~{ File="Heavy Phaser Platform.ship.png"; 			Tier=8;  Difficulty=2; }
+	:~{ File="Heavy Torpedo Platform.ship.png";       	Tier=10; Difficulty=2; }
+	:~{ File="Heavy Impulsphaser Platform.ship.png";	Tier=8;  Difficulty=2; }
+	:~{ File="Heavy Weapon Platform.ship.png";			Tier=14; Difficulty=3; }
+]

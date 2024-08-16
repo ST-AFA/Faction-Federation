@@ -1,0 +1,40 @@
+__Name = "English"
+__DebugOnly = false
+
+Factions
+{
+	Federation = "United Federation of Planets"
+}
+
+StarterShips
+{
+	OberthClass = 	"The Oberth class is a very basic federation ship,"\
+					"constructed in the late 23rd century.\n\n"\
+					"It is small and slow, but comes with a good manouverability and a decent weaponry."
+}
+
+Lore
+{
+	Federation
+	{
+		Title = "United Federation of Planets"
+		Lore1 = 	"The United Federation of Planets (abbreviated as UFP and commonly referred to as the Federation)"\
+					"was a supranational interstellar union of multiple planetary nation-states that operated semi-autonomously"\
+					"under a single central government, founded on the principles of liberty, equality, peace, justice, and"\
+					"progress, with the purpose of furthering the universal rights of all sentient life. \n\n"\
+					"Federation members exchange knowledge and resources to facilitate peaceful cooperation, "\
+					"scientific development, space exploration, and mutual defense."
+		Lore2 = 	"One of the most powerful interstellar states in known space, it encompassed eight thousand light years. \n"\
+					"The total number of formal member worlds was over one hundred and fifty in the 24th century."
+		Lore3 = 	"Unlike its imperial rivals – especially the Klingon Empire and the Romulan Star Empire – "\
+					"who derived power from a single species subjugating other races. The Federations various member"\
+					"worlds joined voluntarily and were equals in the Federations democratic society."
+		Lore4 = 	"Federation culture, values, and technology had vast influence; across space and time, as well as"\
+					"other dimensions and subspace domains. Encountering numerous clashing ideologies, some conflicts "\
+					"escalated into significant resistance, such as armed conflict, and even temporal incursions intended "\
+					"to prevent key historical events from occurring. "
+	}
+}
+
+FederationPlayerShips = "ST-AFA Fed ships"
+FederationPlayerShipsTip = "Ships added by the ST-AFA Federation Faction mod"
